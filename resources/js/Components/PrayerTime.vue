@@ -1,6 +1,9 @@
 <template>
     <div class="prayer-time-container dark:bg-gray-800 dark:border-emerald-400">
-      <!-- Language switch button -->
+      <!-- Error message -->
+      <p v-if="props.error" class="error dark:text-red-300 text-center sm:text-2xl">XX: {{ props.error }}</p>
+      <div  v-show="!props.error">
+         <!-- Language switch button -->
       <button 
         @click="toggleLanguage" 
         class="px-4 py-2 rounded bg-emerald-500 text-white mb-4"
@@ -11,54 +14,56 @@
       <h2 class="date dark:text-emerald-300 font-bold ">{{ country }}</h2>
       <p class="date dark:text-emerald-300 font-bold ">{{ date }}</p>
   
-      <div class="prayer-times-list">
-        <div class="prayer-item dark:bg-gray-700 dark:hover:bg-indigo-900" v-for="(time, prayer) in prayerTimes" :key="prayer">
+      <div class="prayer-times-list" >
+        <div 
+          class="prayer-item dark:bg-gray-700 dark:hover:bg-indigo-900" 
+          v-for="(prayer, index) in filteredPrayerTimes" 
+          :key="index"
+        >
           <span class="prayer-name dark:text-emerald-400">
             {{ isArabic ? getArabicPrayerName(prayer) : prayer }}
           </span>
-          <span class="prayer-time dark:text-white">{{ time }}</span>
+          <span class="prayer-time dark:text-white">{{ formatTimeToAmPm(prayerTimes[prayer]) }}</span>
         </div>
       </div>
+      </div>
+     
     </div>
   </template>
   
+
+
+
+
   <script setup>
-  import { ref } from 'vue';
+  import { computed } from 'vue';
+  import { useTimeFormat } from '@/composables/useTimeFormat';
+  import { useLanguageToggle } from '@/composables/useLanguageToggle';
+
+const props = defineProps({
+  prayerTimes: Object,
+  date: String,
+  country: String,
+  city: String,
+  error : String
+});
+
+const mainPrayers = ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"];
+
+// Use the composables
+const { formatTimeToAmPm } = useTimeFormat();
+const { isArabic, toggleLanguage, getArabicPrayerName } = useLanguageToggle();
+
+// Filter the main prayers
+const filteredPrayerTimes = computed(() => {
+  return mainPrayers.filter(prayer => prayer in props.prayerTimes);
+});
+
+</script>
   
-  const isArabic = ref(false); // State to track language
-  
-  function toggleLanguage() {
-    isArabic.value = !isArabic.value;
-  }
-  
-  function getArabicPrayerName(englishName) {
-    const arabicNames = {
-      "Fajr": "الفجر",
-      "Dhuhr": "الظهر",
-      "Asr": "العصر",
-      "Maghrib": "المغرب",
-      "Isha": "العشاء"
-    };
-    return arabicNames[englishName] || englishName;
-  }
-  
-//   // Manual prayer times data
-//   const manualPrayerTimes = {
-    
-//     Fajr: '05:30 AM',
-//     Dhuhr: '12:15 PM',
-//     Asr: '03:30 PM',
-//     Maghrib: '06:00 PM',
-//     Isha: '07:30 PM'
-//   };
-  
-  defineProps({
-      prayerTimes: Object ,
-      date: String,
-      country: String,
-      city: String,
-  })
-  </script>
+
+
+
   
   <style>
   /* General Container */

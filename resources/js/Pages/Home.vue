@@ -1,6 +1,6 @@
 <template>
   <AppLayout >
-     <PrayerTime :country="country" :date="date" :city="city" :prayerTimes="prayerTimes"/>
+     <PrayerTime :country="country" :date="date" :city="city" :prayerTimes="prayerTimes" :error="error"/>
   </AppLayout>
 </template>
 
@@ -14,6 +14,8 @@
   prayerTimes: Object,
      date: String,
      country: String,
-     city: String
+     city: String, 
+     error: String
+
  })
 </script>
