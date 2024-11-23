@@ -8,38 +8,7 @@ use Inertia\Inertia;
 
 class PrayerController extends Controller
 {
-    public function index()
-    {  
-        $city = 'Casablanca';
-        $country = 'Morocco';
-        $prayerData = [];
-        $error = null;
-    
-        try {
-            $response = Http::get("https://api.aladhan.com/v1/timingsByCity", [
-                'city' => $city,
-                'country' => $country,
-            ]);   
-    
-            if ($response->successful()) {
-                $prayerData = $response->json();
-            } else {
-                $error = 'City not found or invalid response from API';
-            }
-        } catch (\Exception $e) {
-            $error = 'Something went wrong, check your internet connection';
-        }
-    
-        return Inertia::render('Home', [
-            'prayerTimes' => $prayerData['data']['timings'] ?? [],
-            'date' => $prayerData['data']['date']['gregorian']['date'] ?? '',
-            'country' => $prayerData['data']['meta']['method']['name'] ?? $country,
-            'city' => $city,
-            'error' => $error,
-        ]);
-    }
-    
-
+   
     public function show(Request $request)
     {
         $city = $request->city;
@@ -62,14 +31,13 @@ class PrayerController extends Controller
             $error = 'Something went wrong, check your internet connection';
         }
     
-         return Inertia::render('Prayer', [
+         return Inertia::render('Home', [
             'prayerTimes' => $prayerData['data']['timings'] ?? [],
             'date' => $prayerData['data']['date']['gregorian']['date'] ?? '',
             'country' => $prayerData['data']['meta']['method']['name'] ?? $country,
             'city' => $city,
             'error' => $error,
 
-            // dd($request->city)
          ]);
     }
 }

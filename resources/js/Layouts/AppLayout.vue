@@ -1,14 +1,16 @@
 <template>
-    <main class="container mx-auto p-4 ">
-      <search />
-      <div class="">
-        <slot />
-      </div>
-    </main>
+  <header>
+    <Search />
+  </header>
   
-    
-  </template>
+  <main >
+    <slot />
+  </main>
   
-  <script setup>
-    import Search from '../Components/Search.vue'
-  </script>
+  <Footer />
+</template>
+
+<script setup>
+import Search from '../Components/Search.vue';
+import Footer from '../Components/Footer.vue';
+</script>

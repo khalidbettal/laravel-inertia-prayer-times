@@ -1,5 +1,6 @@
 <template>
-    <div class="my-10 w-full sm:w-1/2 lg:w-1/3 mx-auto">
+  <header>
+    <div class="my-10 w-full sm:w-1/2 lg:w-1/3 mx-auto container">
       <Combobox v-model="cityStore.cityName" @update:modelValue="setSelected">
         <div class="relative mt-1">
           <div
@@ -11,6 +12,7 @@
                 v-model="cityStore.cityName"
                 @input="cityStore.onInputChange"
                 placeholder="Search for a city..."
+                required
               />
               <ComboboxButton class="absolute inset-y-0 right-10 flex items-center pr-3">
               </ComboboxButton>
@@ -70,6 +72,7 @@
         </div>
       </Combobox>
     </div>
+  </header>
   </template>
   
   <script setup>
@@ -106,4 +109,6 @@
 // Pass the city as a parameter to the route
   router.get(route('prayer.show', { city }));
   }
+
+  
   </script>

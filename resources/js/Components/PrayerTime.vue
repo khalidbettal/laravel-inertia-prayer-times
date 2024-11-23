@@ -1,44 +1,61 @@
 <template>
-    <div class="prayer-time-container dark:bg-gray-800 dark:border-emerald-400">
-      <!-- Error message -->
-      <p v-if="props.error" class="error dark:text-red-300 text-center sm:text-2xl">XX: {{ props.error }}</p>
-      <div  v-show="!props.error">
-         <!-- Language switch button -->
+  <div class="prayer-time-container dark:bg-gray-800 dark:border-emerald-400">
+
+    <!-- Spinner component -->
+    <section v-if="isLoading" class="text-center py-6" aria-live="polite">
+      <Spinner />
+    </section>
+
+    <!-- Error message -->
+    <section v-if="props.error" class="error dark:text-red-300 text-center sm:text-2xl" aria-live="assertive">
+      <p>XX: {{ props.error }}</p>
+    </section>
+
+    <!-- Prayer Time Details -->
+    <section v-show="!props.error && !isLoading">
+      <!-- Language switch button -->
       <button 
         @click="toggleLanguage" 
         class="px-4 py-2 rounded bg-emerald-500 text-white mb-4"
+        aria-label="Switch Language"
       >
         Switch to {{ isArabic ? 'English' : 'Arabic' }}
       </button>
+
       <h1 class="title dark:text-white">Prayer Times for {{ city }}</h1>
-      <h2 class="date dark:text-emerald-300 font-bold ">{{ country }}</h2>
-      <p class="date dark:text-emerald-300 font-bold ">{{ date }}</p>
-  
-      <div class="prayer-times-list" >
+      <h2 class="date dark:text-emerald-300 font-bold">{{ country }}</h2>
+      <h3 class="date dark:text-emerald-300 font-bold">{{ date }}</h3>
+
+      <div class="prayer-times-list">
         <div 
           class="prayer-item dark:bg-gray-700 dark:hover:bg-indigo-900" 
           v-for="(prayer, index) in filteredPrayerTimes" 
           :key="index"
         >
-          <span class="prayer-name dark:text-emerald-400">
+          <h4 class="prayer-name dark:text-emerald-400">
             {{ isArabic ? getArabicPrayerName(prayer) : prayer }}
-          </span>
-          <span class="prayer-time dark:text-white">{{ formatTimeToAmPm(prayerTimes[prayer]) }}</span>
+          </h4>
+          <p class="prayer-time dark:text-white">{{ formatTimeToAmPm(prayerTimes[prayer]) }}</p>
         </div>
       </div>
-      </div>
-     
-    </div>
-  </template>
+    </section>
+
+  </div>
+</template>
+
   
 
 
 
 
   <script setup>
+
+  import { ref } from 'vue';
   import { computed } from 'vue';
   import { useTimeFormat } from '@/composables/useTimeFormat';
   import { useLanguageToggle } from '@/composables/useLanguageToggle';
+  import { router } from '@inertiajs/vue3';
+  import Spinner from './Spinner.vue';
 
 const props = defineProps({
   prayerTimes: Object,
@@ -58,6 +75,13 @@ const { isArabic, toggleLanguage, getArabicPrayerName } = useLanguageToggle();
 const filteredPrayerTimes = computed(() => {
   return mainPrayers.filter(prayer => prayer in props.prayerTimes);
 });
+
+// isLoiding ref
+const isLoading = ref(false);
+
+router.on('start', () =>  isLoading.value = true);
+  
+router.on('finish', () =>  isLoading.value = false);
 
 </script>
   
