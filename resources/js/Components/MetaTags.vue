@@ -5,7 +5,7 @@
     <!-- Meta Description -->
     <meta
       name="description"
-      :content="`Find daily prayer times in ${city}, ${country} for ${date}. Fajr: ${parayertimes['Fajr']}, Dhuhr: ${parayertimes['Dhuhr']}, Asr: ${parayertimes['Asr']}, Maghrib: ${parayertimes['Maghrib']}, Isha: ${parayertimes['Isha']}. Azan times for each prayer in ${city}, ${country}.`"
+      :content="`Find daily prayer times in ${city}, ${country} for ${date}. Fajr: ${parayertimes['Fajr']}, Dhuhr: ${parayertimes['Dhuhr']}, Asr: ${parayertimes['Asr']}, Maghrib: ${parayertimes['Maghrib']}, Isha: ${parayertimes['Isha']}. Azan times for prayer in ${city}, ${country}.`"
     />
   
     <!-- Canonical Link -->
