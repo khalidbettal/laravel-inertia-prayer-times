@@ -1,10 +1,17 @@
 <?php
 
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\PrayerController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use Inertia\Inertia;
 
-Route::get('/', [TestController::class, 'index']);
+Route::get('/', [PrayerController::class, 'index'])->name('home');
 
-Route::get('/test/{city}', [TestController::class, 'show'])->name('test.show');
+Route::get('/prayer/{city}', [PrayerController::class, 'show'])->name('prayer.show');
+
+Route::get('/test{city}', function (Request $request) {
+    return Inertia::render('Test', [
+        'city' => $request->city
+    ]);
+})->name('test');

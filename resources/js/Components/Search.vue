@@ -84,12 +84,10 @@
   } from '@headlessui/vue'
   import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
   import { useCityStore } from '@/Stores/citiesStore'
-  import { Inertia } from '@inertiajs/inertia';
+  import {router} from '@inertiajs/vue3';
 
-//   import { usePrayerTimesStore } from '@/stores/prayerTimes'
   
   const cityStore = useCityStore()
-//   const prayerStore = usePrayerTimesStore()
   const selected = ref(null)
   
   // Update the selected city in the cityStore
@@ -106,6 +104,6 @@
     }
   
 // Pass the city as a parameter to the route
-  Inertia.get(route('test.show', { city }));
+  router.get(route('prayer.show', { city }));
   }
   </script>
