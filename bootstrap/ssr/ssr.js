@@ -3,6 +3,16 @@ import { renderToString } from "@vue/server-renderer";
 import { createInertiaApp } from "@inertiajs/vue3";
 import createServer from "@inertiajs/vue3/server";
 import { createPinia } from "pinia";
+async function resolvePageComponent(path, pages) {
+  for (const p2 of Array.isArray(path) ? path : [path]) {
+    const page = pages[p2];
+    if (typeof page === "undefined") {
+      continue;
+    }
+    return typeof page === "function" ? page() : page;
+  }
+  throw new Error(`Page not found: ${path}`);
+}
 function t() {
   return t = Object.assign ? Object.assign.bind() : function(t4) {
     for (var e2 = 1; e2 < arguments.length; e2++) {
@@ -340,7 +350,7 @@ createServer((page) => createInertiaApp({
   title: (title) => `${title} - ${appName}`,
   resolve: (name) => resolvePageComponent(
     `./Pages/${name}.vue`,
-    /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-DWJUwV60.js"), "./Pages/Test.vue": () => import("./assets/Test-DYJEZuKH.js") })
+    /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-BseKm9JJ.js"), "./Pages/Test.vue": () => import("./assets/Test-DYJEZuKH.js") })
   ),
   setup({ App, props, plugin }) {
     return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(k).use(createPinia());

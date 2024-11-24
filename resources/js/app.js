@@ -10,7 +10,7 @@ import { createPinia } from 'pinia'
 const appName = import.meta.env.VITE_APP_NAME || 'Prayer-Times';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => `${title} - Prayer Times`,
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.vue`,

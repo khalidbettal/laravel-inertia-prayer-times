@@ -1,53 +1,54 @@
 {
   "\u0000plugin-vue:export-helper": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
+  "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
   "resources/js/Components/Footer.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Components/MetaTags.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Components/PrayerTime.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Components/PrayerTime.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Components/Search.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Components/Spinner.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Composables/useLanguageToggle.js": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Composables/useTimeFormat.js": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Layouts/AppLayout.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Pages/Home.vue": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/Pages/Test.vue": [
     "/build/assets/Test-DYJEZuKH.js"
   ],
   "resources/js/Stores/citiesStore.js": [
-    "/build/assets/Home-DWJUwV60.js",
+    "/build/assets/Home-BseKm9JJ.js",
     "/build/assets/Home-BqV_INZB.css"
   ],
   "resources/js/ssr.js": [],

@@ -11,8 +11,7 @@
                 class="w-full border-none py-3 pl-4 pr-12 text-base leading-5 text-gray-100 bg-gray-900 focus:ring-0"
                 v-model="cityStore.cityName"
                 @input="cityStore.onInputChange"
-                placeholder="Search for a city..."
-                required
+                placeholder="Find prayer times for a city..."
               />
               <ComboboxButton class="absolute inset-y-0 right-10 flex items-center pr-3">
               </ComboboxButton>
