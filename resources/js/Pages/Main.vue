@@ -11,20 +11,20 @@
 
   <AppLayout>
     <!-- Main Article Section -->
-    <section class="px-6 py-12 mt-36 ">
+    <section class="px-6 py-12 my-36 ">
       
       <!-- Article Header -->
       <header class="mb-6 text-center">
         <h1 class="text-3xl font-bold dark:text-white">
           Prayer Times in All Countries Around the World
         </h1>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">
+        <p class="mt-4 text-gray-600 dark:text-gray-400 font-semibold">
           Discover accurate prayer times for Fajr, Dhuhr, Asr, Maghrib, and Isha in your location and around the world.
         </p>
       </header>
 
       <!-- Article Content -->
-      <article class="max-w-3xl mx-auto text-gray-800 dark:text-gray-200 leading-relaxed">
+      <article class="max-w-3xl mx-auto text-gray-800 dark:text-gray-300 leading-relaxed">
         
         <!-- Introduction -->
         <section class="mb-6">
