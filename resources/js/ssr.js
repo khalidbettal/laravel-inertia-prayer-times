@@ -9,7 +9,7 @@ import { createPinia } from 'pinia'
 createServer((page) => createInertiaApp({
   page,
   render: renderToString,
-  title: (title) => `${title} - Prayer Times` ,
+  title: (title) => `${title} - PrayerTi` ,
   resolve: (name) =>
       resolvePageComponent(
           `./Pages/${name}.vue`,
