@@ -7,7 +7,7 @@ import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { createPinia } from 'pinia'
 
-const appName = import.meta.env.VITE_APP_NAME || 'Prayer-Times';
+const appName = import.meta.env.VITE_APP_NAME || 'PrayerTi';
 
 createInertiaApp({
     title: (title) => `${title} - PrayerTi`,
