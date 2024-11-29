@@ -21,6 +21,25 @@ jobs:
     - name: Install PHP dependencies
       run: composer install --no-dev --optimize-autoloader
 
+    - name: Set Environment Variables
+      run: |
+        echo "APP_NAME=${{ secrets.APP_NAME }}" >> .env
+        echo "APP_ENV=${{ secrets.APP_ENV }}" >> .env
+        echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
+        echo "APP_DEBUG=${{ secrets.APP_DEBUG }}" >> .env
+        echo "APP_URL=${{ secrets.APP_URL }}" >> .env
+        echo "DB_CONNECTION=${{ secrets.DB_CONNECTION }}" >> .env
+        echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+        echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
+        echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+        echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+        echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+
+
+
+    - name: Generate Application Key
+      run: php artisan key:generate --force
+
     - name: Build assets
       run: npm install && npm run build
         
