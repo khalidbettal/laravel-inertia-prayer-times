@@ -52,8 +52,8 @@
 
   import { ref } from 'vue';
   import { computed } from 'vue';
-  import { useTimeFormat } from '@/composables/useTimeFormat';
-  import { useLanguageToggle } from '@/composables/useLanguageToggle';
+  import { useTimeFormat } from '@/Composables/useTimeFormat';
+  import { useLanguageToggle } from '@/Composables/useLanguageToggle';
   import { router } from '@inertiajs/vue3';
   import Spinner from './Spinner.vue';
 
