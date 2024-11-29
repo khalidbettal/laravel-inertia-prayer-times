@@ -8,7 +8,7 @@
 
 
 <script setup>
- import { Link , Head, usePage} from '@inertiajs/vue3'
+ import { Head, usePage} from '@inertiajs/vue3'
  import AppLayout from '../Layouts/AppLayout.vue'
  import PrayerTime from '../Components/PrayerTime.vue'
  import MetaTags from '../Components/MetaTags.vue'

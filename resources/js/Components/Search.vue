@@ -84,7 +84,7 @@
     ComboboxOption,
     TransitionRoot,
   } from '@headlessui/vue'
-  import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
+  import { CheckIcon } from '@heroicons/vue/20/solid'
   import { useCityStore } from '@/Stores/citiesStore'
   import {router} from '@inertiajs/vue3';
 

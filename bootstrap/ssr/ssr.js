@@ -347,10 +347,10 @@ const k = { install(t4, e2) {
 createServer((page) => createInertiaApp({
   page,
   render: renderToString,
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => `${title} - PrayerTi`,
   resolve: (name) => resolvePageComponent(
     `./Pages/${name}.vue`,
-    /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-BseKm9JJ.js"), "./Pages/Test.vue": () => import("./assets/Test-DYJEZuKH.js") })
+    /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-DIXQeML7.js"), "./Pages/Main.vue": () => import("./assets/Main-DRMT2Vt-.js") })
   ),
   setup({ App, props, plugin }) {
     return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(k).use(createPinia());
