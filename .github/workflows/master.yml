@@ -11,6 +11,12 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
 
+    - name: Composer install
+      run: composer install --no-dev --no-interaction --prefer-dist
+
+    - name: NPM install
+      run: npm install && npm run build 
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
