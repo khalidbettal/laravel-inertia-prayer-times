@@ -13,17 +13,6 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: Install PHP and Composer
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          tools: 'composer'
-
-      - name: Composer install
-        run: composer install --no-dev --optimize-autoloader
-
-      - name: NPM install
-        run: npm install && npm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -34,6 +23,3 @@ jobs:
           protocol: ftp
           port: 21
           method: upload # Only upload, do not delete files on the remote server
-          exclude: |
-            **/*.log
-            node_modules/
