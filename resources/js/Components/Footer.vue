@@ -4,6 +4,12 @@
       <!-- Dynamic City Links -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6 ">
         <Link href="/" class="text-sm font-medium text-gray-200 hover:text-emerald-500 transition-colors underline"> Home</Link>
+        <Link 
+            :href="route('prayer.show', 'Casablanca')" 
+            class="text-sm font-medium text-gray-200 hover:text-emerald-500 transition-colors underline"
+          >
+            Prayer Times for {{ city.name }}
+          </Link>
 
         <div v-for="city in cities" :key="city.code" class="text-left">
           <Link 
