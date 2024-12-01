@@ -8,7 +8,7 @@
             :href="route('prayer.show', 'Casablanca')" 
             class="text-sm font-medium text-gray-200 hover:text-emerald-500 transition-colors underline"
           >
-            Prayer Times for {{ city.name }}
+            Prayer Times for Casablanca
           </Link>
 
         <div v-for="city in cities" :key="city.code" class="text-left">
