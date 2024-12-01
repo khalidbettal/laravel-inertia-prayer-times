@@ -8,7 +8,7 @@
 
 
 <script setup>
- import { Head, usePage} from '@inertiajs/vue3'
+ import { usePage, Link} from '@inertiajs/vue3'
  import AppLayout from '../Layouts/AppLayout.vue'
  import PrayerTime from '../Components/PrayerTime.vue'
  import MetaTags from '../Components/MetaTags.vue'
@@ -18,8 +18,6 @@
  const url = usePage().url
  // Get the full URL by combining the origin with the relative path
  const fullUrl = `${window.location.origin}${url}`;
-
- console.log(fullUrl);
  
  const props = defineProps({
   prayerTimes: Object,

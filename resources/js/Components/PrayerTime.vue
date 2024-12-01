@@ -1,5 +1,5 @@
 <template>
-  <div class="prayer-time-container dark:bg-gray-800 dark:border-emerald-400">
+  <div class="prayer-time-container dark:bg-gray-800 dark:border-emerald-400 ">
 
     <!-- Spinner component -->
     <section v-if="isLoading" class="text-center py-6" aria-live="polite">
@@ -93,7 +93,7 @@ router.on('finish', () =>  isLoading.value = false);
   /* General Container */
   .prayer-time-container {
     max-width: 28rem;
-    margin: 10rem auto;
+    margin: 5rem auto;
     padding: 1.5rem;
     background-color: white;
     border-radius: 0.75rem;

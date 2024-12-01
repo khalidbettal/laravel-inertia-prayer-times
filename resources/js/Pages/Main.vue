@@ -103,6 +103,8 @@
 import AppLayout from '../Layouts/AppLayout.vue';
 import {Head, usePage} from '@inertiajs/vue3';
 
+
+// url to current page
 const url = usePage().url
 const fullUrl = `${window.location.origin}${url}`;
 </script>
