@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="p36fU7Wlc9jDb_wYPu-SeUsRcbuDUIahYGCAtFAJ3jg" />
+        <meta name="msvalidate.01" content="14686897CBA8FA03A0B012297FFA9A32" />
 
         <title inertia>{{ config('app.name', 'PrayerTi') }}</title>
 
